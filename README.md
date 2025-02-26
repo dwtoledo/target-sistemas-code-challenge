@@ -79,7 +79,7 @@ a) Usar o json ou xml disponível como fonte dos dados do faturamento mensal;
 
 b) Podem existir dias sem faturamento, como nos finais de semana e feriados. Estes dias devem ser ignorados no cálculo da média;
 
-**Resposta: **Foi criado um arquivo JSON com dados fictícios de faturamento por dia.
+**Resposta:** Foi usado o arquivo JSON enviado por email os com dados fictícios de faturamento por dia.
 No código feito o programa lê o arquivo JSON, analisa os dados de faturamento e exibe os valores requisitados.
 
 ```javascript
