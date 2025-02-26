@@ -14,7 +14,7 @@ function loadJsonData(filePath) {
 // Analisa os dados de faturamento
 function analyzeRevenue(data) {
   // Filtra os dias com faturamento
-  const daysWithRevenue = data.filter((day) => day.value > 0);
+  const daysWithRevenue = data.filter((day) => day.valor > 0);
 
   // Se não houver dias com faturamento, retorna valores padrão
   if (daysWithRevenue.length === 0) {
@@ -26,18 +26,18 @@ function analyzeRevenue(data) {
   }
 
   // Encontra o faturamento mínimo
-  const minRevenue = Math.min(...daysWithRevenue.map((day) => day.value));
+  const minRevenue = Math.min(...daysWithRevenue.map((day) => day.valor));
 
   // Encontra o faturamento máximo
-  const maxRevenue = Math.max(...daysWithRevenue.map((day) => day.value));
+  const maxRevenue = Math.max(...daysWithRevenue.map((day) => day.valor));
 
   // Calcula a média de faturamento diário
-  const totalRevenue = daysWithRevenue.reduce((sum, day) => sum + day.value, 0);
+  const totalRevenue = daysWithRevenue.reduce((sum, day) => sum + day.valor, 0);
   const averageRevenue = totalRevenue / daysWithRevenue.length;
 
   // Conta os dias com faturamento acima da média
   const daysAboveAverage = daysWithRevenue.filter(
-    (day) => day.value > averageRevenue
+    (day) => day.valor > averageRevenue
   ).length;
 
   return {
@@ -58,7 +58,7 @@ function displayRevenueAnalysis(results) {
 }
 
 // Carrega e analisa os dados de faturamento
-const revenueData = loadJsonData("questao3-json.json");
+const revenueData = loadJsonData("dados.json");
 const analysisResults = analyzeRevenue(revenueData);
 
 // Exibe os resultados da análise
